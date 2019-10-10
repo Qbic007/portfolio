@@ -1,0 +1,63 @@
+-
+    var skillsCategories = [
+    {
+    title: 'Front-end',
+    items: [
+    {
+    title: 'HTML5',
+    level: 25
+    },
+    {
+    title: 'CSS3',
+    level: 14
+    },
+    {
+    title: 'Javascript',
+    level: 75
+    },
+    {
+    title: 'Jquery и Vue.js',
+    level: 25
+    }
+    ]
+    },
+    {
+    title: 'Workflow',
+    items: [
+    {
+    title: 'Git',
+    level: 45
+    },
+    {
+    title: 'Terminal',
+    level: 27
+    },
+    {
+    title: 'Gulp',
+    level: 68
+    },
+    {
+    title: 'Webpack',
+    level: 94
+    }
+    ]
+    },
+    ]
+
+.skills
+    .skills__caption-container
+        .skills__title Чем я могу быть полезен вам
+        .skills__caption Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .skills__main-container
+        .skills__decoration-container
+            +image('decorations/keyboard.png', 'skills__decorations-image')
+        .skills__categories-container
+            ul.skills__categories-list
+                each category in skillsCategories
+                    li.skills__categories-item
+                        .skills__category-title= category.title
+                            ul.skills__category-list
+                                each item in category.items
+                                    li.skills__item-container
+                                        span.skills__item= item.title
+                
