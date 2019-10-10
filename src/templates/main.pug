@@ -1,7 +1,15 @@
-.header
-    .header__logo
-        span.header__logo-text СП
-    .header__menu
-        include ./blocks/menu
-    .header__socials
-        include ./blocks/socials
+.main
+    .header
+        .header__logo
+            span.header__logo-text СП
+        .header__menu
+            include ./blocks/menu
+        .header__socials
+            include ./blocks/socials
+    .main__caption-container
+        include ./blocks/web-site
+        .main__caption Сергей Першин
+    .main__scroll-container
+        .main__scroll-text Скролл
+        +icon('scroll', 'main__scroll-icon')
+    
