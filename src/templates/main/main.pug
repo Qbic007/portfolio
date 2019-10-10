@@ -1,0 +1,59 @@
+-
+    var menuItems = [
+    {
+    link: '#',
+    caption: 'Главная'
+    },
+    {
+    link: '#',
+    caption: 'Обо мне'
+    },
+    {
+    link: '#',
+    caption: 'Навыки'
+    },
+    {
+    link: '#',
+    caption: 'Работы'
+    },
+    {
+    link: '#',
+    caption: 'Отзывы'
+    },
+    {
+    link: '#',
+    caption: 'Связаться'
+    },
+    ]
+
+    var socialsItems = [
+    {
+    link: '#',
+    caption: 'insta'
+    },
+    {
+    link: '#',
+    caption: 'vk'
+    },
+    {
+    link: '#',
+    caption: 'github'
+    },
+    ]
+
+.header
+    .header__logo
+        span.header__logo-text СП
+    .header__menu
+        .menu
+            ul.menu__list
+                each item in menuItems
+                    li.menu__item
+                        a.menu__link(href="${item.link}")= item.caption
+    .header__socials
+        .soiials
+            ul.socials__list
+                each item in socialsItems
+                    li.socials__item
+                        a.socials__link(href="${item.link}")
+                            +icon(item.caption, 'socials__link-icon socials__link-icon-' + item.caption)
