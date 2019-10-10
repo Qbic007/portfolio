@@ -1,0 +1,22 @@
+-
+    var socialsItems = [
+    {
+    link: '#',
+    caption: 'insta'
+    },
+    {
+    link: '#',
+    caption: 'vk'
+    },
+    {
+    link: '#',
+    caption: 'github'
+    },
+    ]
+
+.soiials
+    ul.socials__list
+        each item in socialsItems
+            li.socials__item
+                a.socials__link(href="${item.link}")
+                    +icon(item.caption, 'socials__link-icon socials__link-icon-' + item.caption)
