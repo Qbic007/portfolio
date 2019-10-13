@@ -2,15 +2,15 @@ section.feedback.maincontent
     h2.feedback__title Связаться со мной
     .feedback__form
         .feedback__form-row
-            .feedback__short-input-container
-                label.feedback__label Введите ваше имя
-                    input.feedback__short-input.feedback__short-input_name(type='text')
-            .feedback__short-input-container
-                label.feedback__label Введите ваш email
-                    input.feedback__short-input.feedback__short-input_email(type='text')
+            .feedback__input-container.feedback__input-container_short
+                label.feedback__label(for='name') Введите ваше имя
+                input.feedback__input.feedback__input_name(type='text' id='name')
+            .feedback__input-container.feedback__input-container_short
+                label.feedback__label(for='email') Введите ваш email
+                input.feedback__input.feedback__input_email(type='text' id='email')
         .feedback__form-row
             .feedback__input-container
-                label.feedback__label Сообщение к письму
-                    input.feedback__short-input.feedback__short-input_message(type='text')
+                label.feedback__label(for='message') Сообщение к письму
+                textarea.feedback__input.feedback__input_message(id='message')
         .feedback__submit-container
-            input.feedback__submit(type='submit')
+            input.feedback__submit(type='submit' value='Отправить')
