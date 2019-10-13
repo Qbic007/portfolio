@@ -1,20 +1,20 @@
 -
     var aboutItems = [
     {
-        title: 'Проживаю',
-        caption: 'Екатеринбург'
+    title: 'Проживаю',
+    caption: 'Екатеринбург'
     },
     {
-        title: 'Возраст',
-        caption: '31 год'
+    title: 'Возраст',
+    caption: '31 год'
     },
     {
-        title: 'Родился',
-        caption: '6 января 1988'
+    title: 'Родился',
+    caption: '6 января 1988'
     },
     ]
 
-.about
+section.about.maincontent
     .about__main-container
         .about__photo-container
             +image('content/user.jpg', 'about__photo')
@@ -28,5 +28,5 @@
                 each item in aboutItems
                     li.about__params-item
                         span.about__params-title= item.title + ':'
-                        span.about__params-caption= item.caption                
+                        span.about__params-caption= item.caption
         .about__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

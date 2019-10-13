@@ -18,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  font-weight: 400;
 }
 
 .wrapper {
@@ -28,18 +29,11 @@ body {
 
 .maincontent {
   max-width: 1480px;
-  margin: auto;
-}
-
-.container {
   margin: 0 auto;
-  max-width: 1480px;
   width: 95%;
-  // width: 1490px;
-
-  @include phones {
-    width: 85%;
-  }
+  font-size: 16px;
+  line-height: 30px;
+  font-family: "Open Sans";
 }
 
 .fullscreen-section {
@@ -85,6 +79,7 @@ button[type="button"] {
 a {
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 img {
