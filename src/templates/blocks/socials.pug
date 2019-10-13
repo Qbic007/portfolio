@@ -14,9 +14,10 @@
     },
     ]
 
-.soiials
-    ul.socials__list
-        each item in socialsItems
-            li.socials__item
-                a.socials__link(href="${item.link}")
-                    +icon(item.caption, 'socials__link-icon socials__link-icon-' + item.caption)
+mixin socials(modifier)
+    .soiials
+        ul.socials__list
+            each item in socialsItems
+                li(class='socials__item' + modifier)
+                    a.socials__link(href="${item.link}")
+                        +icon(item.caption, 'socials__link-icon' + modifier + ' socials__link-icon' + modifier + '-' + item.caption)
