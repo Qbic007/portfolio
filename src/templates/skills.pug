@@ -45,19 +45,22 @@
     ]
 
 section.skills
-        .skills__decoration-container
-            +image('decorations/keyboard.png', 'skills__decorations-image')
-        .maincontent
-            .skills__main-container
-                .skills__caption-container
-                    h2.section-title.section-title Чем я могу быть полезен вам
-                    .skills__caption Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                .skills__categories-container
-                    ul.skills__categories-list
-                        each category in skillsCategories
-                            li.skills__categories-item
-                                .skills__category-title= category.title
-                                ul.skills__category-list
-                                    each item in category.items
-                                        li.skills__item-container
-                                            span.skills__item= item.title                    
+    .skills__decoration-container
+        +image('decorations/keyboard.png', 'skills__decorations-image')
+    .maincontent
+        .skills__main-container
+            .skills__caption-container
+                h2.section-title Чем я могу быть полезен вам
+                .skills__caption Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .skills__categories-container
+                ul.skills__categories-list
+                    each category in skillsCategories
+                        li.skills__categories-item
+                            .skills__category-title= category.title
+                            ul.skills__category-list
+                                each item in category.items
+                                    li.skills__item-container
+                                        span.skills__item= item.title
+                                        svg.skills__percentage(viewBox='0 0 100 100' preserveAspectRatio='none')
+                                            circle.skills__circle(cx='50' cy='50' r='40')
+                                            circle.skills__circle.skills__circle_above(cx='50' cy='50' r='40' style='animation-delay: -' + item.level + 's')
