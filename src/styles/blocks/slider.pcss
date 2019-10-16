@@ -30,7 +30,6 @@
     max-height: 550px;
     width: 60vw;
     height: 33.67vw;
-    overflow: hidden;
     z-index: 10;
     position: relative;
 }
@@ -42,6 +41,30 @@
     z-index: 20;
     display: flex;
     cursor: pointer;
+}
+
+.slider__prev{
+    position: absolute;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background-image: svg-load('arrow-down.svg', fill=white, width=12px, height=12px);
+    background-color: #353e4e;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slider__next{
+    position: absolute;
+    right: -50px;
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    background-image: svg-load('arrow-down.svg', fill=#5d6471, width=12px, height=12px);
+    background-color: #353e4e;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
 }
 
 .slider__caption-container {
