@@ -14,13 +14,17 @@ section.works
                 .slider__pic-container
                     +image('content/slider_main.jpg', 'slider__pic')                    
                     .slider__small-pics-container
-                        .slider__small-pic-container
+                        .slider__small-pic-container.slider__small-pic-container_active
+                            .slider__small-pic-overlay
                             +image('content/slider_preview.jpg', 'slider__pic-preview')
                         .slider__small-pic-container
+                            .slider__small-pic-overlay
                             +image('content/slider_preview.jpg', 'slider__pic-preview')
                         .slider__small-pic-container
+                            .slider__small-pic-overlay
                             +image('content/slider_preview.jpg', 'slider__pic-preview')
                         .slider__small-pic-container
+                            .slider__small-pic-overlay
                             +image('content/slider_preview.jpg', 'slider__pic-preview')
                         .slider__button.slider__button_next
                         .slider__button.slider__button_prev

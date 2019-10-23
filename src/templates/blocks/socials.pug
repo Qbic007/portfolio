@@ -18,6 +18,6 @@ mixin socials(modifier)
     .soiials
         ul.socials__list
             each item in socialsItems
-                li(class='socials__item' + modifier)
-                    a.socials__link(href="${item.link}")
+                a.socials__link(href="${item.link}")
+                    li(class='socials__item' + modifier)
                         +icon(item.caption, 'socials__link-icon' + modifier + ' socials__link-icon' + modifier + '-' + item.caption)

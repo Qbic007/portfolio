@@ -30,11 +30,23 @@
     width: 100%;
 
     &:hover {
-        border-bottom: solid 2px darkorange;
+        border-bottom: solid 2px #ff9a00;
+
+        .feedback__input_name {
+            background-image: svg-load('user.svg', fill=#ff9a00, width=32px, height=32px);
+        }
+
+        .feedback__input_email {
+            background-image: svg-load('envelope.svg', fill=#ff9a00, width=32px, height=32px);
+        }
+
+        .feedback__input_message {
+            background-image: svg-load('message.svg', fill=#ff9a00, width=32px, height=32px);
+        }
     }
 
     &:focus {
-        border-bottom: solid 2px darkorange;
+        border-bottom: solid 2px #ff9a00;
     }
 
     &_short {
@@ -89,6 +101,6 @@
     cursor: pointer;
 
     &:hover {
-        background-image: linear-gradient(90deg, #db9222 0%, #cf721a 100%);
+        background-image: linear-gradient(90deg, #ff7f00 0%, #ff9d00 100%);
     }
 }
