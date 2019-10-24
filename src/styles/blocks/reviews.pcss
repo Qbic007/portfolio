@@ -9,6 +9,10 @@
 .reviews__button-container {
     margin-left: 120px;
     display: flex;
+    
+    @include tablets() {
+        margin-left: 20px;        
+    }
 }
 
 .reviews__button {
@@ -49,12 +53,22 @@
 .reviews__slide-container {
     margin-top: 90px;
     display: flex;
+
+    @include tablets() {
+        justify-content: space-between;
+    }
 }
 
 .reviews__item-container {
     display: flex;
     max-width: 425px;
     margin-right: 80px;
+
+    @include tablets() {
+        max-width: unset;
+        margin-right: 0;
+        width: 49%;
+    }
 }
 
 .reviews__quotes-icon {
@@ -63,6 +77,11 @@
     margin-right: 20px;
     fill: $text-color;
     opacity: 0.3;
+    
+    @include tablets() {
+        width: 30px;
+        height: 30px;        
+    }
 }
 
 .reviews__content-container {
@@ -80,6 +99,10 @@
     color: white;
     font-weight: 700;
     margin-bottom: 15px;
+    
+    @include tablets() {
+        font-size: 16px;
+    }
 }
 
 .reviews__item-text {
@@ -102,4 +125,8 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 30px;
+
+    @include tablets() {
+        margin-right: 20px;
+    }
 }
