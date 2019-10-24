@@ -21,6 +21,7 @@
 
 .skills__categories-container {
     padding-left: 10%;
+    width: 100%;
 }
 
 .skills__caption {
@@ -66,10 +67,7 @@
     color: white;
     font-weight: 700;
     margin-bottom: 45px;
-}
-
-.skills__item {
-    margin-right: 60px;
+    margin-top: 60px;
 }
 
 .skills__percentage {
@@ -97,6 +95,10 @@
 .skills__item-container {
     position: relative;
     margin-right: 60px;
+
+    @include desktop {
+        margin-right: 40px;
+    }
 }
 
 .skills__item {

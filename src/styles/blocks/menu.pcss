@@ -8,9 +8,17 @@
 }
 
 .menu__item {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-bottom: 2px solid transparent;
+    
+    &:first-child {
+        padding-left: 0;
+    }
+    
+    &:last-child {
+        padding-right: 0;
+    }
 
     &:hover {
         color: #ff9a00;

@@ -14,23 +14,35 @@
 
 .about__additonal-container {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .about__left-container {
     margin-right: 10%;
     width: 20%;
     height: auto;
+
+    @include desktop {
+        width: 40%;
+    }
 }
 
 .about__right-container {
     max-width: 35%;
+
+    @include desktop {
+        max-width: 60%;
+    }
 }
 
 .about__photo-container {
     border-radius: 50%;
     overflow: hidden;
     max-width: 200px;
+    
+    @include desktop {
+        margin: auto;
+    }
 }
 
 .about__intro {
@@ -58,10 +70,19 @@
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    
+    @include desktop {
+        width: 100%;
+        padding-left: 0;
+    }
 }
 
 .about__params-item {
     display: flex;
+
+    @include desktop {
+        width: 100%;
+    }
 }
 
 .about__params-caption {
