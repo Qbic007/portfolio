@@ -4,6 +4,9 @@
     align-items: center;
     padding-bottom: 150px;
     position: relative;
+    background-image: url(../images/bg/works.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .skills__main-container {
@@ -11,17 +14,39 @@
     flex-direction: column;
     padding-left: 33%;
     padding-right: 27%;
+    
+    @include tablets() {
+        text-align: center;
+        margin: auto;
+        padding: 0;
+        width: 71%;
+        
+        & .section-title {
+            width: 70%;
+        }
+    }
 }
 
 .skills__caption-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
+    
+    @include tablets() {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .skills__categories-container {
     padding-left: 10%;
     width: 100%;
+    
+    @include tablets() {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .skills__caption {
@@ -36,6 +61,10 @@
     flex-direction: column;
     position: relative;
     margin-left: 35%;
+    
+    @include tablets() {
+        margin: 0;
+    }
 }
 
 .skills__category-list {
@@ -68,6 +97,11 @@
     font-weight: 700;
     margin-bottom: 45px;
     margin-top: 60px;
+    
+    @include tablets() {
+        text-align: center;
+        margin-top: 0;
+    }
 }
 
 .skills__percentage {
@@ -80,7 +114,7 @@
 .skills__circle {
     fill: transparent;
     stroke-width: 3px;
-    stroke: #2a2e35;
+    stroke: #4a4e55;
 }
 
 .skills__circle_above {
