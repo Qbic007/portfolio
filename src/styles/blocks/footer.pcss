@@ -16,6 +16,7 @@
     font-size: 48px;
     font-weight: 600;
     min-width: 222px;
+    line-height: 48px;
 }
 
 .footer__name {
@@ -51,16 +52,29 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
+    @include tablets() {
+        flex-direction: column;
+    }
 }
 
 .footer__site-info {
     margin-bottom: 30px;
+
+    @include tablets() {
+        margin-bottom: 15px;
+    }
 }
 
 .footer__lower-container-part {
     display: flex;
     flex-direction: column;
     width: 48%;
+
+    @include tablets() {
+        width: 100%;
+        margin-bottom: 50px;
+    }
 }
 
 .footer__hint-author {
