@@ -11,11 +11,19 @@
     display: flex;
     flex-direction: column;
     width: 60%;
+    
+    @include tablets() {
+        width: 100%;        
+    }
 }
 
 .feedback__form-row {
     display: flex;
     justify-content: flex-start;
+
+    @include tablets() {
+        justify-content: space-between;
+    }
 }
 
 .feedback__form-row {
@@ -51,6 +59,14 @@
 
     &_short {
         width: 50%;
+    }
+
+    @include tablets() {
+        margin-right: 0;
+        
+        &_short {
+            width: 47%;
+        }
     }
 }
 
@@ -88,6 +104,11 @@
 
 .feedback__submit-container {
     margin-top: 15px;
+
+    @include tablets() {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .feedback__submit {
