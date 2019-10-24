@@ -1,6 +1,10 @@
 .tags__list {
     display: flex;
     flex-wrap: wrap;
+
+    @include tablets() {
+        justify-content: center;
+    }
 }
 
 .tags__item {
