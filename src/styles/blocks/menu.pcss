@@ -10,7 +10,10 @@
 .menu__item {
     margin-right: 50px;
     border-bottom: 2px solid transparent;
-    margin-bottom: 10px;
+    
+    @include tablets() {
+        margin-bottom: 10px;
+    }
     
     &:first-child {
         padding-left: 0;
