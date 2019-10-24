@@ -11,23 +11,18 @@ section.works
             h2.section-title.section-title_dark Мои работы
         .slider
             .slider__slide-container
-                .slider__pic-container
-                    +image('content/slider_main.jpg', 'slider__pic')                    
+                .slider__pic-container(style="background-image: url("+require(`images/content/slider_main.jpg`)+")")
                     .slider__small-pics-container
-                        .slider__small-pic-container.slider__small-pic-container_active
-                            .slider__small-pic-overlay
-                            +image('content/slider_preview.jpg', 'slider__pic-preview')
-                        .slider__small-pic-container
-                            .slider__small-pic-overlay
-                            +image('content/slider_preview.jpg', 'slider__pic-preview')
-                        .slider__small-pic-container
-                            .slider__small-pic-overlay
-                            +image('content/slider_preview.jpg', 'slider__pic-preview')
-                        .slider__small-pic-container
-                            .slider__small-pic-overlay
-                            +image('content/slider_preview.jpg', 'slider__pic-preview')
                         .slider__button.slider__button_next
                         .slider__button.slider__button_prev
+                        .slider__small-pic-container.slider__small-pic-container_active(style="background-image: url("+require(`images/content/slider_main.jpg`)+")")
+                            .slider__small-pic-overlay
+                        .slider__small-pic-container(style="background-image: url("+require(`images/content/slider_main.jpg`)+")")
+                            .slider__small-pic-overlay
+                        .slider__small-pic-container(style="background-image: url("+require(`images/content/slider_main.jpg`)+")")
+                            .slider__small-pic-overlay
+                        .slider__small-pic-container(style="background-image: url("+require(`images/content/slider_main.jpg`)+")")
+                            .slider__small-pic-overlay
                 .slider__caption-container
                     .slider__slide-number 2
                     .slider__tags-container
