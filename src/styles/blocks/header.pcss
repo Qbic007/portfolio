@@ -16,3 +16,27 @@
         display: none;
     }
 }
+
+.header__socials {
+    
+    @include tablets() {
+        display: flex;
+    }
+}
+
+.header__hamburger-icon-container {
+    display: none;
+    
+    @include tablets() {
+        display: flex;
+        justify-content: center;
+        margin-left: 90px;
+        opacity: 0.4;
+    }
+}
+
+.header__hamburger-icon {
+    fill: white;
+    width: 32px;
+    height: 32px;
+}

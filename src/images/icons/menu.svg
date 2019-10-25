@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46" width="24" height="24">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #134563 } 
+	</style>
+	<g id="Layer">
+		<g id="Navicon">
+			<path id="Fill-19" class="shp0" d="M-0.8 4L46.7 4L46.7 10.3L-0.8 10.3L-0.8 4Z" />
+			<path id="Fill-20" class="shp0" d="M-0.8 19.8L46.7 19.8L46.7 26.2L-0.8 26.2L-0.8 19.8Z" />
+			<path id="Fill-21" class="shp0" d="M-0.8 35.7L46.7 35.7L46.7 42L-0.8 42L-0.8 35.7Z" />
+		</g>
+	</g>
+</svg>

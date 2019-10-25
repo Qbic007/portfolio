@@ -7,6 +7,8 @@ section.main.maincontent
         .header__socials
             include ./blocks/socials
             +socials('_header')
+            .header__hamburger-icon-container
+                +icon('menu', 'header__hamburger-icon')
     .main__caption-container
         .main__web-site-container
             include ./blocks/web-site
