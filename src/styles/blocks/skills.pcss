@@ -97,11 +97,15 @@
     
     @include tablets() {
         position: unset;
-        transform: rotate(-90deg);
     }
 }
 
 .skills__decorations-image {
+
+    @include tablets() {
+        transform: rotate(-90deg);
+        margin-bottom: -21.95%;
+    }
 }
 
 .skills__categories-item {
