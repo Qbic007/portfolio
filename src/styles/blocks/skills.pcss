@@ -7,6 +7,10 @@
     background-image: url(../images/bg/works.jpg);
     background-position: center;
     background-size: cover;
+    
+    @include tablets() {
+        padding-bottom: 0;
+    }
 }
 
 .skills__main-container {
@@ -39,6 +43,7 @@
 }
 
 .skills__categories-container {
+    position: relative;
     padding-left: 10%;
     width: 100%;
     
@@ -46,6 +51,8 @@
         padding: 0;
         display: flex;
         justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
@@ -61,6 +68,7 @@
     flex-direction: column;
     position: relative;
     margin-left: 35%;
+    z-index: 10;
     
     @include tablets() {
         margin: 0;
@@ -70,16 +78,26 @@
 .skills__category-list {
     display: flex;
     flex-wrap: wrap;
+
+    @include tablets() {
+        justify-content: center;
+    }
 }
 
 .skills__decoration-container {
     position: absolute;
     max-height: 100%;
+    top: 0;
     left: 0;
     width: 45%;
     
     @include desktop() {
         left: -7%;
+    }
+    
+    @include tablets() {
+        position: unset;
+        transform: rotate(-90deg);
     }
 }
 
