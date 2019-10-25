@@ -4,13 +4,47 @@
     justify-content: space-between;
     height: 100vh;
     align-items: center;
+    padding-top: 65px;
+    padding-bottom: 115px;
 }
 
 .main__caption-container {
     display: flex;
+    position: relative;
+    
+    @include tablets() {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.main__web-site-container {
+    position: absolute;
+    text-align: right;
+    left: -50%;
+    
+    @include tablets() {
+        position: unset;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+.main__caption {
+    font-size: 72px;
+    line-height: 60px;
+    color: white;
+    font-weight: 800;
+    max-width: 320px;
 }
 
 .main__scroll-container {
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+    font-weight: 600;
     display: flex;
     cursor: pointer;
 
@@ -21,9 +55,18 @@
             fill: #ff9a00;
         }
     }
+    
+    @include tablets() {
+        display: none;
+    }
+}
+
+.main__scroll-text {
+    margin-right: 15px;
 }
 
 .main__scroll-icon {
+    fill: white;
     width: 32px;
     height: 32px;
 }
