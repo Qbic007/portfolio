@@ -26,12 +26,12 @@
 
 .header__hamburger-icon-container {
     display: none;
+    cursor: pointer;
     
     @include tablets() {
         display: flex;
         justify-content: center;
         margin-left: 90px;
-        opacity: 0.4;
     }
 }
 
@@ -39,4 +39,10 @@
     fill: white;
     width: 32px;
     height: 32px;
+    opacity: 0.4;
+
+    &:hover {
+        fill: #ff9a00;
+        opacity: 1;
+    }
 }
