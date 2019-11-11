@@ -1,0 +1,15 @@
+include input
+include textarea
+include button
+
+form.feedback-form
+  .feedback-form__title Связаться со мной
+  .feedback-form__row
+    .feedback-form__name
+      +input('text', 'Введите ваше имя', 'name', false, 'user')
+    .feedback-form__mail
+      +input('email', 'Введите ваш email', 'mail', false, 'envelope')
+  .feedback-form__message
+    +textarea('Сообщение к письму', 'message', false, 'message')
+  .feedback-form__button
+    +button('Отправить', 'submit')

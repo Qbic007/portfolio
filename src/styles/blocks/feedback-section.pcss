@@ -1,0 +1,40 @@
+.feedback-section {
+  position: relative;
+  width: 100%;
+  padding: 140px 160px 160px;
+
+  &__parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include desktopHd {
+    padding: 140px 63px 160px;
+  }
+  @include desktop {
+    padding: 122px 43px 110px;
+  }
+  @include tablets {
+    padding: 100px 32px 110px;
+  }
+  &__reviews {
+    margin-bottom: 50px;
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+  &__form {
+    max-width: 863px;
+    padding-top: 150px;
+    @include desktop {
+      padding-top: 70px;
+    }
+    @include tablets {
+      padding-top: 100px;
+    }
+  }
+}

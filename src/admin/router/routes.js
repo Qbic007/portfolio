@@ -1,30 +1,40 @@
 export default [
   {
-    path: "/",
-    component: () => import("../components/pages/about.vue"),
+    path: '/login',
+    component: () => import('@/admin/views/Login.vue'),
     meta: {
-      title: "Блок «Обо мне»"
-    }
+      public: true,
+    },
   },
   {
-    path: "/works",
-    component: () => import("../components/pages/works.vue"),
-    meta: {
-      title: "Блок «Работы»"
-    }
+    path: '/',
+    component: () => import('@/admin/views/Main.vue'),
+    children: [
+      {
+        path: '/',
+        component: () => import('@/admin/views/About.vue'),
+        meta: {
+          title: 'Блок «Обо мне»',
+        },
+      },
+      {
+        path: '/works',
+        component: () => import('@/admin/views/Works.vue'),
+        meta: {
+          title: 'Блок «Работы»',
+        },
+      },
+      {
+        path: '/reviews',
+        component: () => import('@/admin/views/Reviews.vue'),
+        meta: {
+          title: 'Блок «Отзывы»',
+        },
+      },
+    ],
   },
   {
-    path: "/reviews",
-    component: () => import("../components/pages/reviews.vue"),
-    meta: {
-      title: "Блок «Отзывы»"
-    }
+    path: '*',
+    redirect: '/',
   },
-  {
-    path: "/login",
-    component: () => import("../components/pages/login.vue"),
-    meta: {
-      public: true
-    }
-  }
 ];

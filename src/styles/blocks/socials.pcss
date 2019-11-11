@@ -1,50 +1,62 @@
-.socials__list {
+.socials {
+  display: flex;
+  align-items: center;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+  &__link {
     display: flex;
-}
-
-.socials__item {
-    border: solid 1px;
-    border-radius: 50%;
-    height: 50px;
+    justify-content: center;
+    align-items: center;
     width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 22px;
-    
-    &_header {
-        margin-right: 32px;
-        border: none;
-        border-radius: 0;
-    }
-}
-
-.socials__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:last-child > .socials__item_header {
-        margin-right: 0;
-    }
-}
-
-.socials__link-icon {
-    height: 22px;
-    width: 22px;
-    fill: $text-color;
-
+    height: 50px;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
     &:hover {
-        fill: #ff9a00;
+      opacity: 1;
+      .socials__icon {
+        fill: $accent-color;
+      }
     }
-}
-
-.socials__link-icon_header {
+  }
+  &_dark &__link {
+    opacity: 1;
+  }
+  &__icon {
+    fill: white;
+    &_insta {
+      width: 26px;
+    }
+    &_vk {
+      width: 32px;
+    }
+    &_github {
+      width: 28px;
+    }
+  }
+  &_dark &__icon {
     fill: $text-color;
-    height: 32px;
-    width: 32px;
-
-    &:hover {
-        fill: #ff9a00;
+  }
+  &_bordered {
+    .socials__link {
+      border: 1px solid white;
+      border-radius: 50%;
+      &:hover {
+        border-color: $accent-color;
+      }
     }
+    .socials__icon {
+      &_insta {
+        width: 20px;
+      }
+      &_vk {
+        width: 25px;
+      }
+      &_github {
+        width: 22px;
+      }
+    }
+  }
 }

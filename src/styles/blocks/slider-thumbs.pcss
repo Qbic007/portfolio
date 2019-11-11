@@ -1,0 +1,45 @@
+.slider-thumbs {
+  display: flex;
+  align-items: stretch;
+  height: 100px;
+  &__item {
+    position: relative;
+    width: 25%;
+    flex-shrink: 0;
+    cursor: pointer;
+    @include desktopHd {
+      width: calc(100% / 3);
+    }
+    @include tablets {
+      width: 50%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease;
+    }
+    &_active::after {
+      border: 3px solid $accent-color;
+    }
+    &:hover,
+    &_active {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &:hover::after {
+      background-color: rgba($accent-color, 0.3);
+    }
+  }
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}

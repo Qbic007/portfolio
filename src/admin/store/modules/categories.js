@@ -1,77 +1,63 @@
-const findRequiredCategory = (category, skill, cb) => {
-  if (category.id === skill.category) {
-    cb(category);
-  }
-
-  return category;
-};
+import { generateStdError } from '@/admin/helpers/errorHandler';
 
 export default {
   namespaced: true,
   state: {
-    categories: []
+    categories: [],
   },
   mutations: {
-    SET_CATEGORIES(state, categories) {
+    CREATE_CATEGORY: (state, category) => {
+      state.categories = [...state.categories, category];
+    },
+    UPDATE_CATEGORY: (state, category) => {
+      state.categories = [...state.categories.filter((item) => item.id !== category.id), category];
+    },
+    DELETE_CATEGORY: (state, id) => {
+      state.categories = state.categories.filter((item) => item.id !== id);
+    },
+    SET_CATEGORIES: (state, categories) => {
       state.categories = categories;
     },
-    ADD_CATEGORY(state, category) {
-      state.categories.unshift(category);
-    },
-    ADD_SKILL(state, newSkill) {
-      state.categories = state.categories.map(category => {
-        if (category.id === newSkill.category) {
-          category.skills.push(newSkill);
-        }
-
-        return category;
-      });
-    },
-    REMOVE_SKILL(state, deletedSkill) {
-      const removeSkill = category => {
-        category.skills = category.skills.filter(
-          skill => skill.id !== deletedSkill.id
-        );
-      };
-
-      const findRequiredCategory = category => {
-        if (category.id === deletedSkill.category) {
-          removeSkill(category);
-        }
-
-        return category;
-      };
-
-      state.categories = state.categories.map(findRequiredCategory);
-    },
-    EDIT_SKILL(state, editedSkill) {
-      const editSkill = category => {
-        category.skills = category.skills.map(skill =>
-          skill.id === editedSkill.id ? editedSkill : skill
-        );
-      };
-
-      state.categories = state.categories.map(category =>
-        findRequiredCategory(category, editedSkill, editSkill(category))
-      );
-    }
   },
   actions: {
-    async addCategory({ commit }, title) {
+    async addNewSkillGroup({ commit }, groupTitle) {
       try {
-        const { data } = await this.$axios.post("/categories", { title });
-        commit("ADD_CATEGORY", data);
+        const response = await this.$axios.post('/categories', {
+          title: groupTitle,
+        });
+        commit('CREATE_CATEGORY', response.data);
+        return response;
       } catch (error) {
-        throw new Error(
-          error.response.data.error || error.response.data.message
-        );
+        generateStdError(error);
       }
     },
-    async fetchCategories({ commit }) {
+    async updateSkillGroup({ commit }, { id, title }) {
       try {
-        const { data } = await this.$axios.get("/categories/1");
-        commit("SET_CATEGORIES", data);
-      } catch (error) {}
-    }
-  }
+        const response = await this.$axios.post(`/categories/${id}`, { title });
+        commit('UPDATE_CATEGORY', response.data.category);
+        return response;
+      } catch (error) {
+        generateStdError(error);
+      }
+    },
+    async removeSkillGroup({ commit }, id) {
+      try {
+        const response = await this.$axios.delete(`/categories/${id}`);
+        commit('DELETE_CATEGORY', id);
+        return response;
+      } catch (error) {
+        generateStdError(error);
+      }
+    },
+    async fetchCategories({ rootGetters, commit }) {
+      try {
+        const userId = rootGetters['user/userId'];
+        const response = await this.$axios.get(`/categories/${userId}`);
+        commit('SET_CATEGORIES', response.data.reverse());
+        return response;
+      } catch (error) {
+        generateStdError(error);
+      }
+    },
+  },
 };

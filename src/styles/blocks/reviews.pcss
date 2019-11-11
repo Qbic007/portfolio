@@ -1,134 +1,72 @@
 .reviews {
-    margin-bottom: 200px;
-}
-
-.reviews__title-container {
+  &__header {
     display: flex;
-}
-
-.reviews__button-container {
-    margin-left: 120px;
-    display: flex;
-    
-    @include tablets() {
-        margin-left: 20px;        
-    }
-}
-
-.reviews__button {
-    width: 40px;
-    height: 40px;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-}
-
-.reviews__button {
-    border: solid 1px white;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin-right: 30px;
-}
-
-.reviews__icon {
-    height: 12px;
-    width: 12px;
-    fill: white;
-    
-    &_left {
-        transform: rotate(180deg);
+    @include phones {
+      flex-direction: column;
     }
-}
-
-.reviews__slider-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.reviews__slide-container {
-    margin-top: 90px;
-    display: flex;
-
-    @include tablets() {
-        justify-content: space-between;
-    }
-}
-
-.reviews__item-container {
-    display: flex;
-    max-width: 425px;
-    margin-right: 80px;
-
-    @include tablets() {
-        max-width: unset;
-        margin-right: 0;
-        width: 49%;
-    }
-}
-
-.reviews__quotes-icon {
-    width: 75px;
-    height: 75px;
-    margin-right: 20px;
-    fill: $text-color;
-    opacity: 0.3;
-    
-    @include tablets() {
-        width: 30px;
-        height: 30px;        
-    }
-}
-
-.reviews__content-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.reviews__author-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.reviews__author-name {
-    font-size: 18px;
+  }
+  &__title {
+    margin-right: 97px;
     color: white;
+    font-size: 36px;
     font-weight: 700;
-    margin-bottom: 15px;
-    
-    @include tablets() {
-        font-size: 16px;
+    line-height: 48px;
+    @include desktop {
+      font-size: 30px;
     }
-}
-
-.reviews__item-text {
-    margin-bottom: 60px;
-}
-
-.reviews__author-container {
+    @include tablets {
+      margin-right: 5vw;
+    }
+  }
+  &__controls {
     display: flex;
-    flex-direction: row;
-}
-
-.reviews__author-caption-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.reviews__author-photo-container {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
+    align-items: center;
+    @include phones {
+      margin: 26px 0;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  &__prev-button {
     margin-right: 30px;
-
-    @include tablets() {
-        margin-right: 20px;
-        width: 30%;
-        height: 30%;
+  }
+  &__prev-button_disabled, &__next-button_disabled {
+    position: relative;
+    opacity: 0.5;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
+  }
+  &__body {
+    margin-top: 97px;
+    width: 1000px;
+    overflow: hidden;
+    @include desktopHd {
+      width: 932px;
+    }
+    @include desktop {
+      width: 100%;
+    }
+    @include tablets {
+      max-width: 500px;
+    }
+    @include phones {
+      margin-top: 0;
+    }
+  }
+  &__list {
+  }
+  &__item {
+    width: 50%;
+    padding-right: 20px;
+    @include tablets {
+      width: 100%;
+    }
+  }
 }

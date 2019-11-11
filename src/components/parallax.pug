@@ -1,0 +1,17 @@
+include ../mixins
+
+.parallax
+  - var layers = [['sky', 'jpg', 0], ['mountains', 'png', 11]]
+  each layer in layers
+    .parallax__layer(data-speed=layer[2] class=`parallax__layer_${layer[0]}`)
+      +picture(layer[0], layer[1], '')
+  .parallax__layer.parallax__layer_title(data-speed="9")
+    include main-title
+  .parallax__layer.parallax__layer_subtitle(data-speed="9")
+    include main-subtitle
+  - var layers = [['train', 'png', 7], ['grass', 'png', 3]]
+  each layer in layers
+    .parallax__layer(data-speed=layer[2] class=`parallax__layer_${layer[0]}`)
+      +picture(layer[0], layer[1], '')
+  .parallax__layer.parallax__layer_first-gradient(data-speed="3")
+  .parallax__layer.parallax__layer_second-gradient(data-speed="3")

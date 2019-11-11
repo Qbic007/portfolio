@@ -1,7 +1,7 @@
-export const wrapIntoFormData = plainObject => {
+export const wrapIntoFormData = (plainObject) => {
   const formData = new FormData();
 
-  Object.keys(plainObject).forEach(key => {
+  Object.keys(plainObject).forEach((key) => {
     formData.append(key, plainObject[key]);
   });
 

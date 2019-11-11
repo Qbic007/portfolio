@@ -1,6 +1,6 @@
-import requests from '../requests';
+import requests from '@/admin/requests';
 
-export const renderer = file => {
+export const renderer = (file) => {
   const reader = new FileReader();
 
   return new Promise((resolve, reject) => {
@@ -10,12 +10,12 @@ export const renderer = file => {
         resolve(reader.result);
       };
     } catch (error) {
-      throw new Error("Ошибка при чтении файла");
+      throw new Error('Ошибка при чтении файла');
     }
   });
 };
 
-export const getAbsoluteImgPath = imgPath => {
+export const getAbsoluteImgPath = (imgPath) => {
   const baseUrl = requests.defaults.baseURL;
-  return `${baseUrl}/${imgPath}` 
-}
+  return `${baseUrl}/${imgPath}`;
+};
