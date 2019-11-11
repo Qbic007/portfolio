@@ -39,8 +39,8 @@ export default {
   },
   data() {
     return {
-      name: 'test-241019',
-      password: '12345',
+      name: '',
+      password: '',
       isLoading: false,
     };
   },
@@ -59,7 +59,7 @@ export default {
       this.isLoading = false;
     },
     exitFromAdmin() {
-      location.href = 'https://qbic007.github.io/portfolio';
+      location.href = 'https://qbic007.github.io/qbic007.github.io/portfolio';
     },
   },
 };

@@ -10,7 +10,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
-    const publicPath = '/portfolio/';
+    const publicPath = '/qbic007.github.io/portfolio/';
 
     const pcss = {
         test: /\.(p|post|)css$/,
